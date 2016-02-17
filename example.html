@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="ko">
 	<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    
-    <title>Example</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	
+	<title>Example</title>
 	<link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Noto+Sans">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/notify.css">
 	<link rel="stylesheet" type="text/css" href="css/prettify.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<style type="text/css">
-    	html, body{
+		html, body{
 			font-family: "Noto Sans","맑은 고딕","Malgun Gothic","Apple SD Gothic Neo","돋움",dotum,Arial,sans-serif;
 			font-size: 14px;
 			line-height: 1.428571429;
@@ -313,6 +314,24 @@ function myFunc(){
 		<button type="button" class="btn btn-default" onclick="$.notify('Alert!', {color: '#fff', background: '#A5881B'})" style="background-color:#A5881B;color:#fff;">#A5881B</button>
 	</div>
 	<pre class="prettyprint">$.notify("Alert!", {color: "#fff", background: "#D44950"});</pre>
+</div>
+
+<div class="container">
+	<h2 id="Icon">Icon</h2>
+	<p>
+		<code>icon</code>&nbsp;옵션을 사용하여, 메세지에 아이콘을 추가합니다.<br>
+		아이콘을 사용하려면 <code><a href="https://fortawesome.github.io/Font-Awesome/" target="_blank">Font Awesome</a></code>의 라이브러리를 추가해야합니다.<br>
+		값으로 <code><a href="https://fortawesome.github.io/Font-Awesome/" target="_blank">Font Awesome</a></code>의 아이콘 <code><a href="https://fortawesome.github.io/Font-Awesome/icons/" target="_blank" style="color:#c7254e;">네임</a></code>을 사용합니다.
+	</p>
+	<div class="button-list">
+		<button type="button" class="btn btn-default" onclick="$.notify('Success', {type: 'success', icon:'check'})">check</button>
+		<button type="button" class="btn btn-default" onclick="$.notify('Fail', {type: 'success', icon:'close'})">close</button>
+		<button type="button" class="btn btn-default" onclick="$.notify('Info', {type: 'success', icon:'exclamation'})">exclamation</button>
+		<button type="button" class="btn btn-default" onclick="$.notify('Alert', {type: 'success', icon:'bell'})">bell</button>
+	</div>
+	<pre class="prettyprint"><xmp><!-- Font Awesome Css Include -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"></xmp>$.notify("Success", {type: "info", icon:"check"});
+	</pre>
 </div>
 <div class="container">
 	<h2 id="class">Class</h2>

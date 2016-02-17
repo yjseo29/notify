@@ -30,20 +30,23 @@ if (typeof jQuery === 'undefined') {
 			class: "",
 			animation: true,
 			animationType: "drop",
+			icon: "",
 			buttons: [],
 			buttonFunc: [],
 			buttonAlign: "center",
 			width: "600px"
-        }, options);
+		}, options);
 		
 		var animation = "";
 		var buttons = "";
 		var close = "";
 		var closeClass = "";
-
+		var icon = "";
+		
 		if(config.animation) { animation = config.animationType;  }
+		if(config.icon != "") { icon = "<i class='icon fa fa-"+config.icon+"'></i>"; }
 		if(config.close || config.delay == 0) { close = "<button type='button' class='close' data-close='notify' data-animation='"+animation+"'; >×</button>"; closeClass = "notify-dismissible"; }
-		if(config.buttons.length != 0){
+		/*if(config.buttons.length != 0){
 			buttons = "<div class='notify-buttons "+config.buttonAlign+"'>";
 			if(config.buttonFunc.length != 0){
 				if(typeof config.buttonFunc[0] != "undefined"){
@@ -60,9 +63,9 @@ if (typeof jQuery === 'undefined') {
 				
 			}
 			buttons += "</div>";
-		}
+		}*/
 
-		var $elem = $("<div data-animation='"+animation+"' class='notify "+config.align+" "+ config.verticalAlign+" "+animation+" "+closeClass+"'><div class='message'>"+message+"</div>"+buttons+close+"</div>");
+		var $elem = $("<div data-animation='"+animation+"' class='notify "+config.align+" "+ config.verticalAlign+" "+animation+" "+closeClass+"'><div class='message'>"+icon+message+"</div>"+buttons+close+"</div>");
 		if(config.background != ""){ 
 			$elem.css("background", config.background);
 		}else{
@@ -94,9 +97,7 @@ if (typeof jQuery === 'undefined') {
 			setTimeout(function(){
 				$backdrop.css("opacity", config.blur);
 			},100);
-		}
-
-		if(config.delay != 0){
+		}else{
 			setTimeout(function(){
 				if(config.animation){
 					$elem.addClass(config.animationType);
@@ -109,7 +110,7 @@ if (typeof jQuery === 'undefined') {
 				}
 			},config.delay);
 		}
-    }
+	}
 
 	$(document).on("click", ".notify-backdrop", function(e){
 		hide($(".notify"));
