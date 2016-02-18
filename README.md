@@ -3,4 +3,4 @@
 JQuery Alert Plugin
 
 ##DEMO
-[http://faeple.github.io/notify/](http://faeple.github.io/notify/)
+[http://yjseo29.github.io/notify/](http://yjseo29.github.io/notify/)
