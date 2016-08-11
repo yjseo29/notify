@@ -1,7 +1,7 @@
 # notify
 A simple and easy jQuery plugin for Alert Notification
 
-## emo and Documentation
+## Demo and Documentation
 [http://yjseo29.github.io/notify/](http://yjseo29.github.io/notify/)
 
 ## Authors
